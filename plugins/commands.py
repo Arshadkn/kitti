@@ -43,20 +43,12 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('sᴇᴀʀᴄʜ​', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('♚ ᴏᴡɴᴇʀ ♚', callback_data='owner_info')
-            ],[      
-            InlineKeyboardButton('〄 ʜᴇʟᴘ 〄', callback_data='help2'),
-            InlineKeyboardButton('⍟ ᴀʙᴏᴜᴛ ⍟', callback_data='about')
-            ],[
-            InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='money_bot')
-        ]] 
-        reply_markup = InlineKeyboardMarkup(buttons)
+            InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀᴇ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴ', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)                
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=script.SUR_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -69,20 +61,12 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('sᴇᴀʀᴄʜ​', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('♚ ᴏᴡɴᴇʀ ♚', callback_data='owner_info')
-            ],[      
-            InlineKeyboardButton('〄 ʜᴇʟᴘ 〄', callback_data='help2'),
-            InlineKeyboardButton('⍟ ᴀʙᴏᴜᴛ ⍟', callback_data='about')
-            ],[
-            InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='money_bot')
-        ]]                    
-        reply_markup = InlineKeyboardMarkup(buttons)
+            InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀᴇ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴ', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)              
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=script.SUR_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
