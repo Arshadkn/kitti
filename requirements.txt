@@ -11,3 +11,4 @@ datetime
 pytz
 python-dotenv
 psutil
+aiohttp
