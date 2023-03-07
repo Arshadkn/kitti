@@ -1196,18 +1196,34 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "delf":
         await query.answer(text=script.DELF, show_alert=True)
+        
+    elif query.data == "surprise":
+        btn = [[
+            InlineKeyboardButton('ᴄʟɪᴄᴋ ʜᴇʀᴇ ꜰᴏʀᴇ ᴍᴏʀᴇ ʙᴜᴛᴛᴏɴ', callback_data='start')
+        ]]
+        reply_markup=InlineKeyboardMarkup(btn)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.SUR_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
 
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('〆 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 〆', url=f'http://t.me/at3moviesofficalbot?startgroup=true')
             ],[
-            InlineKeyboardButton('sᴇᴀʀᴄʜ​', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('♚ ᴏᴡɴᴇʀ ♚', callback_data='owner_info')
+            InlineKeyboardButton('👑 ᴏᴡɴᴇʀ', callback_data='owner_info'),
+            InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url=
             ],[      
-            InlineKeyboardButton('〄 ʜᴇʟᴘ 〄', callback_data='help2'),
-            InlineKeyboardButton('⍟ ᴀʙᴏᴜᴛ ⍟', callback_data='about')
+            InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', url=
+            InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', url=
             ],[
-            InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='money_bot')
+            InlineKeyboardButton('⚡️ ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏꜱᴇ ᴛʜɪꜱ ʙᴜᴛᴛᴏɴ ⚡️', callback_data='surprise')
         ]]                          
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
