@@ -594,4 +594,6 @@ coммand and υѕeѕ
 
 <b>🆓 ғʀᴇᴇ:</b> <code>{}</code> """
 
+    GROUP_MODE = """
+ hfydfyddfygf"""
     
