@@ -2,7 +2,7 @@ import time, os
 
 from pyrogram import Client, filters, enums
 
-from plugins.helpers.config import DOWNLOAD_LOCATION, CAPTION, ADMINS
+from plugins.helpers.config import DOWNLOAD_LOCATION, CAPTION
 
 from plugins.helpers.utils import progress_message, humanbytes
 
