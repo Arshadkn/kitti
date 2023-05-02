@@ -4,7 +4,7 @@ from pyrogram import Client, filters, enums
 
 from plugins.helpers.config import DOWNLOAD_LOCATION, CAPTION
 
-from plugins.helpers.utils import progress_message, humanbytes
+from plugins.helpers.utils import progress_message, humanbytes, ADMINS
 
 @Client.on_message(filters.private & filters.command("rename") & filters.user(ADMINS))             
 
